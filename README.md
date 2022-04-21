@@ -1,5 +1,5 @@
 # envi_masterthesis
-My codes for my statistical analysis using R
+I am still a beginner in R but here is what I learned so far throughout the process of learning it for my master thesis
 
 Using R vegan package for the statistical analysis and
 ggplot for establishing the plot
