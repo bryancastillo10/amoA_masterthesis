@@ -7,8 +7,8 @@ library(dplyr)
 library(ggsci)
 
 #Import raw data first
-spe<-read.csv("C:/Users/Bryan/Documents/R/github/raw_data/species_abun.csv",  fileEncoding="UTF-8-BOM")
-envwater<-read.csv("C:/Users/Bryan/Documents/R/github/raw_data/envi.csv",  fileEncoding="UTF-8-BOM")
+spe<-read.csv("working_directory/raw_data/species_abun.csv",  fileEncoding="UTF-8-BOM")
+envwater<-read.csv("working_directory/raw_data/envi.csv",  fileEncoding="UTF-8-BOM")
 
 
 #Prepare community by normalizing community data with log-transform
