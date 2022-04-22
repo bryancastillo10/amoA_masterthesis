@@ -11,12 +11,12 @@ spe<-read.csv("working_directory/raw_data/species_abun.csv",  fileEncoding="UTF-
 envwater<-read.csv("working_directory/raw_data/envi.csv",  fileEncoding="UTF-8-BOM")
 
 
-#Prepare community by normalizing community data with log-transform
+#Prepare the dependent variables by normalizing community data with log-transform
 spelog<- spe %>%
   group_by(Site) %>% 
   mutate_at(3:12,log)
 
-#Set site as categorical variable, you can arrange in your own way by adding
+#Set site as categorical variable, you can arrange it in your own way by adding
 #arguments in the factor() function
 envwater$Site<-factor(envwater$Site)
 
