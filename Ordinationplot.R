@@ -25,7 +25,7 @@ species<-spelog[,c(3:12)]
 envi<-envwater[,c(2:11)]
 
 #Code for running the calculation,rda() for redundancy analysis/PCA
-# metaMDS() for NMDS, or cca() for canonical correspondence
+#  or cca() for canonical correspondence
 #it depends on the ordination you want to do, I'll use rda() as an example
 
 rdamodel<-rda(species~.,envi)
