@@ -53,7 +53,7 @@ ggplot(df_species,aes(x=RDA1, y=RDA2))+
   # In the following parts, you can observe that I manually set up the
   #geom functions so that I can adjust their color,size,and shape,
   #per individual coordinates, so the settings would depend on your preferences
-  #Check df_environ in the console to manually know the dataframe position of the coordinates
+  #Check df_environ in the console to manually know the dataframe index/position of the coordinates
   geom_segment(data=df_environ[4,1:2,drop=FALSE], 
                aes(x=0, xend=RDA1*scaling_factor,y=0, 
                    yend=RDA2*scaling_factor,color="BOD")
