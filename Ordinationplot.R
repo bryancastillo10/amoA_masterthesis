@@ -12,23 +12,26 @@ envwater<-read.csv("working_directory/raw_data/envi.csv",  fileEncoding="UTF-8-B
 
 
 #Prepare the dependent variables by normalizing community data with log-transform
-spelog<- spe %>%
-  group_by(Site) %>% 
-  mutate_at(3:12,log)
+#As suggested by other research articles, log(x+1) and hellinger transformation can normalize community data
+spe.mat<- spe[,c(3:12)]
+spe.hell<-decostand(log1p(spe.mat),method="hellinger")
 
 #Set site as categorical variable, you can arrange it in your own way by adding
 #arguments in the factor() function
 envwater$Site<-factor(envwater$Site)
+Site<-envwater[,2]
 
-#Dataframe with values
-species<-spelog[,c(3:12)]
-envi<-envwater[,c(2:11)]
+#PCA for species-site interaction: unconstrained analysis
+dist.spe<-vegdist(spe.hell, method="euclidean")
+mod<-betadisper(dist.spe,Site)
+df_site<-data.frame(Site=rownames(mod$centroids),data.frame(mod$centroids))
 
-#Code for running the calculation,rda() for redundancy analysis/PCA
-#  or cca() for canonical correspondence
-#it depends on the ordination you want to do, I'll use rda() as an example
 
-rdamodel<-rda(species~.,envi)
+#RDA for species-envi interaction: constrained analysis
+#RDA
+rdamodel<-rda(spe.hell~.,envi)
+df_species  <- data.frame(summary(rdamodel)$species[,1:2])
+df_environ  <- scores(rdamodel, display = "bp") 
 
 #Gather calculation results
 #RDA scores and biplot point coordinates
