@@ -96,16 +96,16 @@ ggplot(df_species,aes(x=RDA1, y=RDA2))+
   #Sites    
   geom_point(data=df_site[1,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray24",size=1.5)+
   geom_text(data=df_site[1,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray25",
-            label="Bridge",size=2,face="bold",nudge_y=-0.06)+
+            label="Bridge",size=2,fontface="bold",nudge_y=-0.06)+
   geom_point(data=df_site[2,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray24",size=1.5)+
   geom_text(data=df_site[2,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray25",
-            label="Delta",size=2,face="bold",nudge_y=-0.06)+
+            label="Delta",size=2,fontface="bold",nudge_y=-0.06)+
   geom_point(data=df_site[3,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray24",size=1.5)+
   geom_text(data=df_site[3,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray25",
-            label="River.A",size=2,face="bold",nudge_y=-0.07)+
+            label="River.A",size=2,fontface="bold",nudge_y=-0.07)+
   geom_point(data=df_site[4,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray24",size=1.5)+
   geom_text(data=df_site[4,1:3,drop=FALSE],aes(x=PCoA1,y=PCoA2),color="gray25",
-            label="River.B",size=2,face="bold",nudge_y=-0.07)+
+            label="River.B",size=2,fontface="bold",nudge_y=-0.07)+
   
   #Plot species abundance 
   geom_point(data=df_species[1,1:2,drop=FALSE],
