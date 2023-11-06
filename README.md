@@ -1,5 +1,5 @@
 # envi_masterthesis
-I am still a beginner in R but here is what I learned so far throughout the process of learning it for my master thesis
+I learned R for handling and visualization of my data during my master's degree thesis
 
 Using R vegan package for the statistical analysis and
 ggplot for establishing the plot
