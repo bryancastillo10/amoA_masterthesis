@@ -7,8 +7,8 @@ library(dplyr)
 library(ggsci)
 
 #Import raw data first
-spe<-read.csv("working_directory/raw_data/species_abun.csv",  fileEncoding="UTF-8-BOM")
-envwater<-read.csv("working_directory/raw_data/envi.csv",  fileEncoding="UTF-8-BOM")
+spe<-read.csv("raw_data/species_abun.csv",  fileEncoding="UTF-8-BOM")
+envwater<-read.csv("raw_data/envi.csv",  fileEncoding="UTF-8-BOM")
 
 
 #Prepare the dependent variables by normalizing community data with log-transform
